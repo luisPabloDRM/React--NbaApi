@@ -1,0 +1,56 @@
+
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  font-family: Calibri;
+  font-size: 24px;
+}
+
+.titleSection {
+  background-image: url(https://p4.wallpaperbetter.com/wallpaper/661/973/110/cool-nba-logo-wallpaper-preview.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #000000;
+}
+
+.titleSection input {
+  width: 200px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid #5e98b1;
+  font-size: 18px;
+  padding-left: 10px;
+}
+
+.titleSection button {
+  width: 180px;
+  height: 40px;
+  margin: 20px;
+  border-radius: 10px;
+  font-size: 18px;
+  padding-left: 10px;
+  border: none;
+  color: #0a0a01;
+  background-color: transparentize($color: #dac2c2, $amount: 0.5);
+}
+
+.titleSection button:hover {
+  cursor: pointer;
+}
+
+.displaySection{
+  h1{
+    font-size: 20px;
+    color:red
+  }
+}
