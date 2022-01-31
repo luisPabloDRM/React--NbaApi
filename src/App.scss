@@ -48,9 +48,20 @@ body {
   cursor: pointer;
 }
 
-.displaySection{
+.DisplaySection{
+
+  display: flex;
+  flex-direction: column;
+  min-width: 40%;
+
+
   h1{
     font-size: 20px;
-    color:red
+    color: black
+  }
+
+  h3{
+    font-size: 15px;
+    color :black;
   }
 }
