@@ -7,14 +7,9 @@ import Axios from "axios";
 const App= ()=> {
   const [nba, setNba] = useState("");
   const [nbaChosen, setNbaChosen] = useState(false);
-  const [nbaName, setNbaName] = useState([{
-    id:"",
-    first_name:"",
-    last_name:"",
-    position: "",
-    team: {},
+  const [nbaName, setNbaName] = useState([]);
+  
 
-  }]);
 
   const searchNba =()=>{
 
@@ -25,10 +20,10 @@ const App= ()=> {
            first_name:res.data.first_name,
            last_name:res.data.last_name,
            position:res.data.position,
-           team:{ name:res.data.name},
+           team: res.data.team.name,
       
        }]);
-      setNbaChosen(true);
+       setNbaChosen(true);
     }
     )
   };
@@ -47,20 +42,20 @@ const App= ()=> {
         <button  onClick={searchNba} >Search Nba</button>
 
       </div>
-      <div className='DisplaySection'>
+      <div className='displaySection'>
      {!nbaChosen ? (
           <h1> Please choose a player </h1>
         ) : (
           <>
+             
             <h1>Name:{nbaName.first_name}</h1>
-            {/* <img src={nbaName.image} alt={nbaName.name} /> */}
-            <h1>:Last Name {nbaName.last_name}</h1>
+            <h1>Last Name: {nbaName.last_name}</h1>
             <h3>Position: {nbaName.position}</h3>
-            <h3>Team: {nbaName.team}</h3>
+            
             
           </>
-        )}
-      </div> 
+         )} 
+      </div>
     </div>
   );
       };
