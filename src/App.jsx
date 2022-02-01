@@ -6,7 +6,7 @@ import Axios from "axios";
 
 const App= ()=> {
   const [nba, setNba] = useState("");
-  
+  const [nbaChosen, setNbaChosen] = useState(false);
   const [nbaName, setNbaName] = useState("");
   
 
@@ -23,7 +23,7 @@ const App= ()=> {
            team: res.data.team.name,
       
        });
-       
+       setNbaChosen(true);
     }
     )
   };
@@ -43,12 +43,19 @@ const App= ()=> {
 
       </div>
       <div className='displaySection'>
+     {!nbaChosen ? (
+          <h1> Please choose a player </h1>
+        ) : (
+          <>
 
-            <h1>Name:</h1><h2>{nbaName.first_name}</h2>
-            <h1>Last Name:</h1> <h2>{nbaName.last_name}</h2>
-            <h1>Position:</h1> <h2>{nbaName.position}</h2>
-            <h1>Team:</h1> <h2>{nbaName.team}</h2>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWGIkHQBPeVd4bWy77S75ONxGFajsDElUvmw&usqp=CAU" alt=""  />
+            <h2>Name:{nbaName.first_name}</h2>
+            <h2>Last Name:{nbaName.last_name}</h2>
+            <h2>Position:{nbaName.position}</h2>
+            <h2>Team:{nbaName.team}</h2>
 
+          </>
+         )}
       </div>
     </div>
   );
